@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты - Artisanal Roasts</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="js/telegram-config.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body class="page-contacts">
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">Artisanal Roasts</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="menu.html" class="nav__link">Меню</a>
+        <a href="about.html" class="nav__link">О нас</a>
+        <a href="contacts.html" class="nav__link is-active">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <a href="menu.html" class="btn btn--dark">Заказать</a>
+        <button class="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="Мобильное меню">
+    <a href="index.html" class="nav__link">Главная</a>
+    <a href="menu.html" class="nav__link">Меню</a>
+    <a href="about.html" class="nav__link">О нас</a>
+    <a href="contacts.html" class="nav__link is-active">Контакты</a>
+  </nav>
+
+  <main class="contacts-main">
+    <div class="contacts-map reveal">
+      <div class="contacts-map__embed">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=55.124147%2C51.765334&mode=search&oid=1114444152&ol=biz&source=serp_navig&z=17.04"
+          title="Колледж экономики и информатики на карте" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <p class="contacts-map__links">
+        <a href="https://yandex.ru/maps/org/kolledzh_ekonomiki_i_informatiki/1114444152/?utm_medium=mapframe&utm_source=maps"
+          target="_blank" rel="noopener noreferrer">Колледж экономики и информатики</a>
+        <span class="contacts-map__links-sep" aria-hidden="true">·</span>
+        <a href="https://yandex.ru/maps/48/orenburg/category/college/184106236/?utm_medium=mapframe&utm_source=maps"
+          target="_blank" rel="noopener noreferrer">Колледж в Оренбурге</a>
+      </p>
+    </div>
+    <div class="contacts-form-wrap reveal reveal--right">
+      <span class="eyebrow">Свяжитесь с нами</span>
+      <h1 class="contacts-form__title">Давайте сварим что-нибудь вместе.</h1>
+
+      <div class="form-stepper" id="contact-stepper">
+        <div class="form-stepper__progress" style="width:33%"></div>
+        <div class="form-step is-active">
+          <div class="form-step__dot"></div>
+          <span class="form-step__label">01 Детали</span>
+        </div>
+        <div class="form-step">
+          <div class="form-step__dot"></div>
+          <span class="form-step__label">02 Сообщение</span>
+        </div>
+        <div class="form-step">
+          <div class="form-step__dot"></div>
+          <span class="form-step__label">03 Подтверждение</span>
+        </div>
+      </div>
+
+      <div class="form-progress-bar" id="contact-progress-bar">
+        <div class="form-progress-bar__fill"></div>
+      </div>
+      <p class="form-progress-text" id="contact-progress-text">Заполнено: 0%</p>
+
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-name">Ваше имя</label>
+            <input type="text" id="contact-name" name="name" placeholder="Введите имя" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Электронная почта</label>
+            <input type="email" id="contact-email" name="email" placeholder="Введите эл.почту" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Тема</label>
+          <select id="contact-subject" name="subject">
+            <option>Общий вопрос</option>
+            <option>Сотрудничество</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Ваше сообщение</label>
+          <textarea id="contact-message" name="message" placeholder="Введите сообщение"></textarea>
+        </div>
+        <div class="form-actions">
+          <div class="form-hotkeys">
+            <span class="hotkey-hint"><kbd>Enter</kbd> Отправить</span>
+            <span class="hotkey-hint"><kbd>Esc</kbd> Очистить</span>
+          </div>
+          <button type="submit" class="btn btn--dark">Отправить запрос</button>
+        </div>
+        <div class="form-status">
+          <span class="form-status__item form-status__item--success" id="status-success">✓ Успешно</span>
+          <span class="form-status__item form-status__item--error" id="status-error">✕ Ошибка</span>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid" style="grid-template-columns:1.5fr 1fr 1fr 1fr">
+      <div class="footer__col">
+        <div class="footer__logo">Artisanal Roasts</div>
+        <p class="footer__desc">Создаём впечатления, прославляющие неспешный ритм кофейного путешествия.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Исследовать</h4>
+        <ul class="footer__links">
+          <li><a href="contacts.html">Локации</a></li>
+          <li><a href="about.html">Наша история</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Ресурсы</h4>
+        <ul class="footer__links">
+          <li><a href="#">Гид по завариванию</a></li>
+          <li><a href="#">Устойчивое развитие</a></li>
+        </ul>
+      </div>
+      <div class="footer__col" style="text-align:right;align-self:end">
+        <p class="footer__desc">© 2026 Artisanal Roasts.<br>Создано с философией медленной жизни.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-order" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+      <h2 class="modal__title">Оформить заказ</h2>
+      <div class="form-progress-bar" id="order-progress-bar">
+        <div class="form-progress-bar__fill"></div>
+      </div>
+      <p class="form-progress-text" id="order-progress-text">Заполнено: 0%</p>
+      <form id="order-form">
+        <div class="form-group"><label for="order-name">Имя</label><input type="text" id="order-name" name="name"
+            required></div>
+        <div class="form-group"><label for="order-phone">Телефон</label><input type="tel" id="order-phone" name="phone">
+        </div>
+        <button type="submit" class="btn btn--dark" style="width:100%">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

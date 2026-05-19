@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню - Artisanal Roasts</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="js/telegram-config.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body class="page-menu">
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">Artisanal Roasts</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="menu.html" class="nav__link is-active">Меню</a>
+        <a href="about.html" class="nav__link">О нас</a>
+        <a href="contacts.html" class="nav__link">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <a href="menu.html#menu-catalog" class="btn btn--dark">Заказать сейчас</a>
+        <button class="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="Мобильное меню">
+    <a href="index.html" class="nav__link">Главная</a>
+    <a href="menu.html" class="nav__link is-active">Меню</a>
+    <a href="about.html" class="nav__link">О нас</a>
+    <a href="contacts.html" class="nav__link">Контакты</a>
+  </nav>
+
+  <section class="menu-hero">
+    <h1 class="menu-hero__title reveal">Меню</h1>
+    <p class="menu-hero__subtitle reveal">Тщательно отобранные зерна и авторские напитки для истинных ценителей.</p>
+  </section>
+  <div class="mood-card reveal" id="mood-generator">
+    <div class="mood-card__input">
+      <h2>Не знаете, что взять?</h2>
+      <p>Нажмите кнопку — случайно выберем напиток или выпечку из нашего меню.</p>
+      <button type="button" class="btn btn--dark mood-generate-btn" id="mood-generate-btn">
+        Удивить меня
+      </button>
+      <div class="mood-card__stars" aria-hidden="true">✦<br>✦<br>✦</div>
+    </div>
+    <button type="button" class="mood-card__result mood-card__result--clickable" id="mood-result-btn"
+      aria-label="Сгенерировать другой напиток">
+      <svg class="mood-card__result-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+        <line x1="6" y1="1" x2="6" y2="4" />
+        <line x1="10" y1="1" x2="10" y2="4" />
+        <line x1="14" y1="1" x2="14" y2="4" />
+      </svg>
+      <p class="mood-card__result-label">Сегодня советуем</p>
+      <p class="mood-card__result-name" id="mood-result">Колд брю медленного заваривания</p>
+    </button>
+  </div>
+
+  <div id="menu-catalog" class="menu-layout">
+    <aside class="menu-sidebar reveal">
+      <span class="eyebrow">Категории</span>
+      <ul class="menu-categories">
+        <li><button type="button" class="menu-cat is-active" data-category="coffee" aria-label="Кофе">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+            </svg>
+            <span class="menu-cat__label">Кофе</span>
+          </button></li>
+        <li><button type="button" class="menu-cat" data-category="tea" aria-label="Чай">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span class="menu-cat__label">Чай</span>
+          </button></li>
+        <li><button type="button" class="menu-cat" data-category="pastry" aria-label="Выпечка">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            </svg>
+            <span class="menu-cat__label">Выпечка</span>
+          </button></li>
+        <li><button type="button" class="menu-cat" data-category="seasonal" aria-label="Сезонное">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+            </svg>
+            <span class="menu-cat__label">Сезонное</span>
+          </button></li>
+      </ul>
+    </aside>
+
+    <main class="menu-content">
+      <section data-category="coffee">
+        <h2 class="menu-section__title reveal">Кофе</h2>
+        <div class="menu-grid">
+          <article class="menu-item reveal" data-skeleton="1200" data-add>
+            <div class="skeleton-wrap">
+              <div class="skeleton skeleton--img"></div>
+              <div>
+                <div class="skeleton skeleton--title"></div>
+                <div class="skeleton skeleton--line"></div>
+                <div class="skeleton skeleton--line-short"></div>
+              </div>
+            </div>
+            <div class="real-content">
+              <img class="menu-item__img"
+                data-src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=200&q=80" alt="Колд брю"
+                loading="lazy" width="90" height="90">
+              <div>
+                <span class="menu-item__price">410 ₽</span>
+                <h3 class="menu-item__title">Колд брю медленного заваривания</h3>
+                <p class="menu-item__desc">18 часов экстракции в холодной воде. Шоколад, карамель, чистое послевкусие.</p>
+              </div>
+            </div>
+          </article>
+          <article class="menu-item reveal" data-skeleton="1400" data-add>
+            <div class="skeleton-wrap">
+              <div class="skeleton skeleton--img"></div>
+              <div>
+                <div class="skeleton skeleton--title"></div>
+                <div class="skeleton skeleton--line"></div>
+                <div class="skeleton skeleton--line-short"></div>
+              </div>
+            </div>
+            <div class="real-content">
+              <img class="menu-item__img"
+                data-src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" alt="Кортадо"
+                loading="lazy" width="90" height="90">
+              <div>
+                <span class="menu-item__price">290 ₽</span>
+                <h3 class="menu-item__title">Кортадо на овсяном молоке</h3>
+                <p class="menu-item__desc">Баланс эспрессо и молока. Кремовая текстура без лишней сладости.</p>
+              </div>
+            </div>
+          </article>
+          <article class="menu-item reveal" data-skeleton="1600" data-add>
+            <div class="skeleton-wrap">
+              <div class="skeleton skeleton--img"></div>
+              <div>
+                <div class="skeleton skeleton--title"></div>
+                <div class="skeleton skeleton--line"></div>
+                <div class="skeleton skeleton--line-short"></div>
+              </div>
+            </div>
+            <div class="real-content">
+              <img class="menu-item__img"
+                data-src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=200&q=80" alt="Латте"
+                loading="lazy" width="90" height="90">
+              <div>
+                <span class="menu-item__price">370 ₽</span>
+                <h3 class="menu-item__title">Латте с карамелью</h3>
+                <p class="menu-item__desc">Двойной эспрессо, молоко и домашний карамельный сироп.</p>
+              </div>
+            </div>
+          </article>
+          <article class="menu-item reveal" data-skeleton="1800" data-add>
+            <div class="skeleton-wrap">
+              <div class="skeleton skeleton--img"></div>
+              <div>
+                <div class="skeleton skeleton--title"></div>
+                <div class="skeleton skeleton--line"></div>
+                <div class="skeleton skeleton--line-short"></div>
+              </div>
+            </div>
+            <div class="real-content">
+              <img class="menu-item__img"
+                data-src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200&q=80" alt="Эспрессо"
+                loading="lazy" width="90" height="90">
+              <div>
+                <span class="menu-item__price">210 ₽</span>
+                <h3 class="menu-item__title">Фирменный эспрессо</h3>
+                <p class="menu-item__desc">Наша фирменная смесь. Орех, тёмный шоколад, долгое послевкусие.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section data-category="pastry" hidden>
+        <h2 class="menu-section__title reveal">Выпечка</h2>
+        <div class="menu-grid">
+          <article class="menu-item reveal" data-skeleton="2000" data-add>
+            <div class="skeleton-wrap">
+              <div class="skeleton skeleton--img"></div>
+              <div>
+                <div class="skeleton skeleton--title"></div>
+                <div class="skeleton skeleton--line"></div>
+                <div class="skeleton skeleton--line-short"></div>
+              </div>
+            </div>
+            <div class="real-content">
+              <img class="menu-item__img" data-src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=200&q=80"
+                alt="Круассан" loading="lazy" width="90" height="90">
+              <div>
+                <span class="menu-item__price">230 ₽</span>
+                <h3 class="menu-item__title">Круассан на закваске</h3>
+                <p class="menu-item__desc">72 часа ферментации. Хрустящая корочка, воздушная мякоть, сливочное масло.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section data-category="tea" hidden>
+        <h2 class="menu-section__title">Чай</h2>
+        <p style="color:rgba(255,255,255,0.6)">Скоро в меню — сезонная коллекция.</p>
+      </section>
+      <section data-category="seasonal" hidden>
+        <h2 class="menu-section__title">Сезонное</h2>
+        <p style="color:rgba(255,255,255,0.6)">Осенняя линейка появится в сентябре.</p>
+      </section>
+
+      <div class="menu-3d-wrap reveal">
+        <div class="menu-3d" data-three aria-label="3D чашка кофе"></div>
+      </div>
+    </main>
+  </div>
+
+  <button type="button" class="fab-cart" data-modal-open="modal-cart" aria-label="Открыть корзину">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <path d="M16 10a4 4 0 0 1-8 0" />
+    </svg>
+    <span class="fab-cart__badge" hidden>0</span>
+  </button>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="footer__logo">Artisanal Roasts</div>
+        <p class="footer__desc">Варим истории с 2020 года. Каждая чашка - путешествие от фермы до ваших рук.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Узнать больше</h4>
+        <ul class="footer__links">
+          <li><a href="contacts.html">Адреса</a></li>
+          <li><a href="about.html">Наша история</a></li>
+          <li><a href="#">Гид по завариванию</a></li>
+          <li><a href="#">Устойчивое развитие</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2024 Artisanal Roasts. Создано с философией slow-living.</span>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-cart" role="dialog" aria-modal="true" aria-labelledby="modal-cart-title">
+    <div class="modal modal--cart">
+      <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+      <h2 class="modal__title" id="modal-cart-title">Ваша корзина</h2>
+      <p class="modal__subtitle">Позиции сохраняются автоматически</p>
+      <p class="cart-empty" id="cart-empty">Корзина пуста — добавьте напиток из меню</p>
+      <ul class="cart-list" id="cart-list" aria-live="polite"></ul>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Итого</span>
+          <span id="cart-total">0 ₽</span>
+        </div>
+        <button type="button" class="btn btn--dark" id="cart-checkout" style="width:100%" disabled>Оформить
+          заказ</button>
+        <button type="button" class="btn btn--outline-cart" id="cart-clear">Очистить корзину</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-order" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+      <h2 class="modal__title">Оформить заказ</h2>
+      <div class="form-progress-bar" id="order-progress-bar">
+        <div class="form-progress-bar__fill"></div>
+      </div>
+      <p class="form-progress-text" id="order-progress-text">Заполнено: 0%</p>
+      <form id="order-form">
+        <div class="form-group"><label for="order-name">Имя</label><input type="text" id="order-name" name="name"
+            required></div>
+        <div class="form-group"><label for="order-phone">Телефон</label><input type="tel" id="order-phone" name="phone">
+        </div>
+        <div class="form-group"><label for="order-drink">Напиток</label>
+          <select id="order-drink" name="drink">
+            <option>Колд брю медленного заваривания</option>
+            <option>Кортадо на овсяном молоке</option>
+            <option>Фирменный эспрессо</option>
+            <option>Круассан на закваске</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--dark" style="width:100%;margin-top:1rem">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

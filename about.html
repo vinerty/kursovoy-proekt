@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас - Artisanal Roasts</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="js/telegram-config.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">Artisanal Roasts</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="menu.html" class="nav__link">Меню</a>
+        <a href="about.html" class="nav__link is-active">О нас</a>
+        <a href="contacts.html" class="nav__link">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <a href="menu.html" class="btn btn--dark">Заказать</a>
+        <button class="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="Мобильное меню">
+    <a href="index.html" class="nav__link">Главная</a>
+    <a href="menu.html" class="nav__link">Меню</a>
+    <a href="about.html" class="nav__link is-active">О нас</a>
+    <a href="contacts.html" class="nav__link">Контакты</a>
+    <a href="menu.html" class="btn btn--dark">Заказать</a>
+  </nav>
+  <section class="about-hero">
+    <p class="eyebrow reveal">В поисках настоящего наслаждения</p>
+    <h1 class="about-hero__title reveal">В поисках идеального <em>пролива.</em></h1>
+    <p class="about-hero__text reveal">Мы верим, что идеальная чашка рождается из уважения к зерну, терпения обжарщика и
+      внимания бариста. Каждый этап - от фермы до вашей чашки - продуман до мелочей.</p>
+    <div class="about-hero__3d" data-three aria-hidden="true"></div>
+  </section>
+  <section class="section section--warm">
+    <div class="section__inner handcrafted">
+      <div class="handcrafted__media reveal reveal--left" data-skeleton="1800">
+        <div class="skeleton-wrap" style="width:100%;height:100%;min-height:400px">
+          <div class="skeleton" style="width:100%;height:100%;border-radius:24px"></div>
+        </div>
+        <div class="real-content" style="width:100%;height:100%">
+          <video autoplay muted loop playsinline data-autopause aria-label="Бариста готовит латте в кофейне">
+            <source src="video/handcrafted-barista.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="handcrafted__content reveal reveal--right">
+        <h2 class="handcrafted__title">Создано руками, а не машинами</h2>
+        <p class="handcrafted__text">Наша обжарка - это ремесло. Каждая партия зерна проходит ручной отбор, а профиль
+          обжарки подбирается индивидуально под сорт и сезон.</p>
+        <p class="handcrafted__text">Мы работаем с микролотами напрямую с фермерами, чтобы вы получали самые свежие и
+          честные вкусы в каждой чашке.</p>
+        <a href="menu.html" class="handcrafted__link">Мы ценим каждое зерно и его историю</a>
+      </div>
+    </div>
+  </section>
+  <section class="section section--warm timeline-section">
+    <div class="section__inner">
+      <h2 class="timeline-section__title reveal">Наш путь</h2>
+      <div class="timeline">
+        <article class="timeline__item reveal reveal--left">
+          <span class="timeline__dot"></span>
+          <p class="timeline__year">2020</p>
+          <h3 class="timeline__heading">Обжарочная в гараже</h3>
+          <p class="timeline__text">Первый ростер, десятки экспериментов и первая чашка, которой мы по-настоящему
+            гордились.</p>
+        </article>
+        <article class="timeline__item reveal reveal--right">
+          <span class="timeline__dot"></span>
+          <p class="timeline__year">2023</p>
+          <h3 class="timeline__heading">Переход к прямым поставкам</h3>
+          <p class="timeline__text">Партнёрства с фермерами из Эфиопии, Колумбии и Гватемалы. Прозрачная цепочка от
+            урожая до обжарки.</p>
+        </article>
+        <article class="timeline__item reveal reveal--left">
+          <span class="timeline__dot"></span>
+          <p class="timeline__year">Сегодня</p>
+          <h3 class="timeline__heading">Штаб-квартира Artisanal Roasts</h3>
+          <p class="timeline__text">Обжарочная, Slow Bar и школа бариста в одном пространстве - сердце нашего
+            сообщества.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--warm team-section">
+    <div class="section__inner">
+      <span class="eyebrow reveal">История в лицах</span>
+      <h2 class="team-section__title reveal">Сердце нашей обжарочной</h2>
+      <div class="team-grid">
+        <article class="team-card reveal">
+          <img data-src="assets\img\aboutus\image.png" alt="Команда обжарки" loading="lazy" width="600" height="750">
+          <div class="team-card__overlay"></div>
+          <div class="team-card__text">
+            <h3>Команда кофейни</h3>
+            <p>Лучшие в этом деле</p>
+          </div>
+        </article>
+        <article class="team-card reveal">
+          <img data-src="assets\img\aboutus\oleg.png" alt="Олег" loading="lazy" width="600" height="750">
+          <div class="team-card__overlay"></div>
+          <div class="team-card__text">
+            <h3>Олег, наш основатель</h3>
+            <p>Идейный вдохновитель этой кофейни</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer footer--about">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="footer__logo">Artisanal Roasts</div>
+        <p class="footer__desc">Создаём впечатления, прославляющие неспешный ритм кофейного путешествия.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Услуги</h4>
+        <ul class="footer__links">
+          <li><a href="contacts.html">Адреса</a></li>
+          <li><a href="#">Мероприятия</a></li>
+          <li><a href="#">Оптовые поставки</a></li>
+          <li><a href="#">Розничные регионы</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__contact">
+        <h4>Контакты</h4>
+        <p>hello@artisanalroasts.ru</p>
+        <p>+7 (495) 123-45-67</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2024 Artisanal Roasts</span>
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+  <div class="modal-overlay" id="modal-order" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+      <h2 class="modal__title">Оформить заказ</h2>
+      <p class="modal__subtitle">Заполните форму - данные сохраняются автоматически</p>
+      <div class="form-progress-bar" id="order-progress-bar">
+        <div class="form-progress-bar__fill"></div>
+      </div>
+      <p class="form-progress-text" id="order-progress-text">Заполнено: 0%</p>
+      <form id="order-form">
+        <div class="form-group"><label for="order-name">Ваше имя</label><input type="text" id="order-name" name="name"
+            required></div>
+        <div class="form-group"><label for="order-phone">Телефон</label><input type="tel" id="order-phone" name="phone">
+        </div>
+        <div class="form-group"><label for="order-drink">Напиток</label>
+          <select id="order-drink" name="drink">
+            <option>Фирменный эспрессо</option>
+            <option>Колд брю</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="order-comment">Комментарий</label><textarea id="order-comment"
+            name="comment"></textarea></div>
+        <button type="submit" class="btn btn--dark" style="width:100%">Отправить заказ</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
